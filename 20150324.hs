@@ -77,7 +77,7 @@ buildMaxHeap l  i = buildMaxHeap(heapfy l i) (i-1)
 heapSort :: [Int] -> [Int]
 heapSort []     = []
 heapSort (a:[]) = [a]
-heapSort l  =  heapSort(buildMaxHeap (tail l) (len (tail l))) ++ [head l]
+heapSort l  =  heapSort(tail (buildMaxHeap l (len l))) ++ [head (buildMaxHeap l (len l))]
 
 
 
